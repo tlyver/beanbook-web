@@ -9,6 +9,7 @@
 </template>
 
 <style lang="sass">
+@import "@/sass/custom.sass"
 @import "~bulma/bulma"
 
 #app
