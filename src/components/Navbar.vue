@@ -12,7 +12,7 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item">
           About
@@ -25,6 +25,20 @@
         <a class="navbar-item">
           Contact
         </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input is-small" type="text" placeholder="email">
+            </div>
+            <div class="control">
+              <a class="button is-primary is-small">
+                Search
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
