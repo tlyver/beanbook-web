@@ -1,53 +1,78 @@
 <template>
-  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top is-desktop" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item">
-        <img alt="Vue logo" src="../assets/bean.png">
-      </a>
-
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <router-link :to="{ name: 'home' }">
+          <img alt="Vue logo" src="../assets/bean-text.png">
+        </router-link>
       </a>
     </div>
 
     <div class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          About
-        </a>
-
-        <a class="navbar-item">
-          Our Picks
-        </a>
-
-        <a class="navbar-item">
-          Contact
-        </a>
-      </div>
       <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field has-addons">
-            <div class="control">
-              <input class="input is-small" type="text" placeholder="email">
-            </div>
-            <div class="control">
-              <a class="button is-primary is-small">
-                Search
-              </a>
-            </div>
-          </div>
-        </div>
+        <a class="navbar-item">
+          <router-link :to="{ name: 'about' }">
+            <font-awesome-icon class="nav-icon" icon="glasses" />
+            <span class="hide-nav-summary">About</span>
+          </router-link>
+        </a>
+
+        <a class="navbar-item">
+          <router-link :to="{ name: 'picks' }">
+            <font-awesome-icon class="nav-icon" icon="book" />
+            <span class="hide-nav-summary">Bookshelf</span>
+          </router-link>
+        </a>
+
+        <a class="navbar-item">
+          <router-link :to="{ name: 'nooks' }">
+            <font-awesome-icon class="nav-icon" icon="store" />
+            <span class="hide-nav-summary">Nooks</span>
+          </router-link>
+        </a>
+
+        <a class="navbar-item">
+          <router-link :to="{ name: 'contact' }">
+            <font-awesome-icon class="nav-icon" icon="envelope-open-text" />
+            <span class="hide-nav-summary">Contact</span>
+          </router-link>
+        </a>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faBook,
+  faEnvelopeOpenText,
+  faGlasses,
+  faStore
+} from '@fortawesome/free-solid-svg-icons'
+
+library.add(
+  faBook,
+  faEnvelopeOpenText,
+  faGlasses,
+  faStore
+)
+
 export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="sass" scoped>
+  @import "@/sass/custom.sass"
+  @import "~bulma/bulma"
+  .nav-icon
+    margin-right: .5rem
+  +until(550px)
+    .hide-nav-summary
+      display: none
+  +until(0px)
+    .navbar-menu
+      background-color: $background
+      box-shadow: 0
+      padding: 0
 </style>
