@@ -39,11 +39,10 @@
         </div>
       </div>
       <div class="description">
-        <div class="">
-          Overview
+        <div class="has-text-weight-bold is-uppercase">
+          About {{ result.title }}
         </div>
-        <div class="">
-          {{ apiRes.volumeInfo.description }}
+        <div v-if="apiRes.volumeInfo" class="book-description" v-html="apiRes.volumeInfo.description">
         </div>
       </div>
       <!-- <div class="columns">
@@ -62,7 +61,7 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      apiRes: [],
+      apiRes: {},
       results: [],
       res: {
         count: 4,
@@ -153,17 +152,24 @@ export default {
       }
     }
   },
+  created () {
+    this.getGoogleApi()
+  },
   mounted () {
     this.results = this.res.results
-    this.getGoogleApi()
   },
   methods: {
     getBook () {
       window.alert('hello')
     },
     async getGoogleApi () {
-      const res = await axios.get('https://www.googleapis.com/books/v1/volumes/dXewCgAAQBAJ')
-      this.apiRes = res.data
+      await axios.get('https://www.googleapis.com/books/v1/volumes/dXewCgAAQBAJ')
+        .then((response) => {
+          this.apiRes = response.data
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
     }
   }
 }
@@ -202,4 +208,6 @@ export default {
     display: flex
     flex-direction: column
     align-items: flex-start
+  .book-description
+    text-align: left
 </style>
