@@ -2,7 +2,7 @@
   <nav class="navbar is-fixed-top is-desktop" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item">
-        <router-link :to="{ name: 'home' }">
+        <router-link :to="{ name: 'about' }">
           <img alt="Vue logo" src="../assets/bean-text.png">
         </router-link>
       </a>
