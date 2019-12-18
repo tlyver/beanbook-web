@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="nook">
+  <div class="nook">
+    <div class="nook-title">
       <h4 class="title is-4 has-text-primary">
         {{ format(new Date(nook.featured_date), 'MMMM') }}
         {{ `'${format(new Date(nook.featured_date), 'yy')}` }}
@@ -40,10 +40,11 @@ export default {
       display: flex
       justify-content: center
   .nook
+    margin-bottom: 2rem
+  .nook-title
     display: flex
     flex-direction: column
     align-items: flex-start
-    margin-bottom: 1rem
   .nook-summary
     padding-bottom: 1rem
 </style>
