@@ -11,6 +11,7 @@
     <bean-pick v-for="result in results" :key="result.uuid" :result="result"/>
   </div>
 </template>
+
 <script>
 import axios from 'axios'
 import BeanPick from '@/components/BeanPick.vue'
