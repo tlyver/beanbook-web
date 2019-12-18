@@ -21,13 +21,19 @@
           </div>
           <div class="info-box">
             <div class="categories">
-              <span class="info-label has-text-left has-text-grey">genres:</span>
-              <div
-                class="tag is-primary is-light has-text-weight-bold is-lowercase"
-                v-for="category in result.categories"
-                :key="category.name">
-                {{ category.name }}
+              <div class="columns is-mobile is-1">
+                <div class="column is-narrow">
+                  <span class="info-label has-text-left has-text-grey">genres:</span>
+                </div>
+                <div class="column wrap">
+                  <div class="tag is-primary is-light has-text-weight-bold is-lowercase"
+                    v-for="category in result.categories"
+                    :key="category.name">
+                    {{ category.name }}
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -69,7 +75,6 @@ export default {
   },
   methods: {
     checkDescriptionLength (description) {
-      console.log(description.length)
       if (description.length > 10) {
         this.descriptionExpanded = true
       } else {
@@ -136,4 +141,8 @@ export default {
     text-align: left
   .tag
     margin-right: 0.5rem
+    margin-bottom: .5rem
+  .wrap
+    display: flex
+    flex-wrap: wrap
 </style>
