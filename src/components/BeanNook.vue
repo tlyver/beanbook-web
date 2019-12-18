@@ -45,6 +45,7 @@ export default {
     display: flex
     flex-direction: column
     align-items: flex-start
+    margin-bottom: .5rem
   .nook-summary
     padding-bottom: 1rem
 </style>

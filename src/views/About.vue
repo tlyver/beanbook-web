@@ -16,6 +16,4 @@ I thought about starting a book club in late December, when I was still navigati
 </template>
 
   <style lang="sass" scoped>
-    .page-title
-      margin-bottom: 1rem
   </style>
