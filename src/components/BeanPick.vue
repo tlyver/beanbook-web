@@ -21,15 +21,17 @@
           </div>
           <div class="info-box">
             <div class="categories">
-              <div class="columns is-mobile is-1">
+              <div class="columns is-mobile is-variable is-1">
                 <div class="column is-narrow">
                   <span class="info-label has-text-left has-text-grey">genres:</span>
                 </div>
-                <div class="column wrap">
-                  <div class="tag is-primary is-light has-text-weight-bold is-lowercase"
-                    v-for="category in result.categories"
-                    :key="category.name">
-                    {{ category.name }}
+                <div class="column is-full">
+                  <div class="tags">
+                    <div class="tag is-primary is-light has-text-weight-bold is-lowercase"
+                      v-for="category in result.categories"
+                      :key="category.name">
+                      {{ category.name }}
+                    </div>
                   </div>
                 </div>
               </div>
