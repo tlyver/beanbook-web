@@ -58,11 +58,10 @@ export default {
   methods: {
     async getBooks () {
       try {
-        const res = await axios.get('beanbook.club/api/club/books')
-        console.log(res)
-        this.results = res.data
+        const res = await axios.get('api/club/books')
+        this.results = res.data.results
       } catch (error) {
-        console.log(error)
+        // handle error
       }
     }
   }
