@@ -21,7 +21,7 @@ export default {
     }
   },
   mounted () {
-    this.iconCounter()
+    this.iconTimer()
   },
   methods: {
     toggleIcon () {
