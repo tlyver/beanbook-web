@@ -22,38 +22,10 @@ export default {
   data () {
     return {
       results: []
-      // res: {
-      //   count: 4,
-      //   next: null,
-      //   previous: null,
-      //   results: [
-      //     {
-      //       uuid: '370e4963-53a3-4d2c-be98-16e39283499d',
-      //       created_on: '2019-11-18T01:07:26.534330Z',
-      //       updated_on: '2019-11-18T01:07:26.534366Z',
-      //       title: 'War and Peace',
-      //       sub_title: 'The story of War and Peace',
-      //       authors: [
-      //         { full_name: 'Leo Tolstoy' }
-      //       ],
-      //       release_date: '1869-01-01',
-      //       categories: [
-      //         { name: 'fiction' },
-      //         { name: 'history' }
-      //       ],
-      //       isbn_10: '0156787334',
-      //       isbn_13: null,
-      //       featured_date: '2019-10-01',
-      //       rating: null,
-      //       commentary: null
-      //     }
-      //   ]
-      // }
     }
   },
-  mounted () {
+  created () {
     this.getBooks()
-    this.results = this.res.results
   },
   methods: {
     async getBooks () {
