@@ -3,7 +3,9 @@
     <div id="nav">
       <navbar/>
     </div>
-    <router-view/>
+    <div id="main">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -20,6 +22,7 @@ export default {
 <style lang="sass">
 @import "@/sass/custom.sass"
 @import "~bulma/bulma"
+@import "@/sass/global.sass"
 
 #app
   font-family: 'Avenir', Helvetica, Arial, sans-serif
@@ -29,10 +32,14 @@ export default {
   color: #2c3e50
 
 #nav
-  padding: 30px
+  padding: 26px
   a
     font-weight: $weight-bold
     &.router-link-exact-active
       color: $bean-orange
 
+#main
+  max-width: 769px
+  padding: 1rem
+  margin: auto
 </style>
