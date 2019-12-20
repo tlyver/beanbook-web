@@ -68,6 +68,8 @@ export default {
   .nav-icon
     margin-right: .5rem
   +until(550px)
+    .nav-icon
+      margin-right: 0rem
     .hide-nav-summary
       display: none
   +until(0px)
