@@ -25,7 +25,7 @@
                 <div class="column is-narrow">
                   <span class="info-label has-text-left has-text-grey">genres:</span>
                 </div>
-                <div class="column is-full">
+                <div class="column">
                   <div class="tags">
                     <div class="tag is-primary is-light has-text-weight-bold is-lowercase"
                       v-for="category in result.categories"
