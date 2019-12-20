@@ -135,6 +135,7 @@ export default {
   .info-label
     padding-right: .5rem
   .categories
+    width: 100%
   .description
     display: flex
     flex-direction: column

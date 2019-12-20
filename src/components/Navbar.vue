@@ -30,13 +30,6 @@
             <span class="hide-nav-summary">Nooks</span>
           </router-link>
         </a>
-
-        <a class="navbar-item">
-          <router-link :to="{ name: 'contact' }">
-            <font-awesome-icon class="nav-icon" icon="envelope-open-text" />
-            <span class="hide-nav-summary">Contact</span>
-          </router-link>
-        </a>
       </div>
     </div>
   </nav>
@@ -46,14 +39,12 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faBook,
-  faEnvelopeOpenText,
   faGlasses,
   faStore
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
   faBook,
-  faEnvelopeOpenText,
   faGlasses,
   faStore
 )
