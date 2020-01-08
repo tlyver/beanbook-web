@@ -31,11 +31,12 @@
           </router-link>
         </a>
 
-        <a class="navbar-item">
-          <router-link :to="{ name: 'contact' }">
-            <font-awesome-icon class="nav-icon" icon="envelope-open-text" />
-            <span class="hide-nav-summary">Contact</span>
-          </router-link>
+        <i class="vertically-center">
+          <font-awesome-icon icon="grip-lines-vertical" />
+        </i>
+
+        <a class="navbar-item has-text-primary" href="https://www.instagram.com/thebeanbookclub/?hl=en">
+          <font-awesome-icon :icon="['fab', 'instagram']" />
         </a>
       </div>
     </div>
@@ -48,13 +49,17 @@ import {
   faBook,
   faEnvelopeOpenText,
   faGlasses,
+  faGripLinesVertical,
   faStore
 } from '@fortawesome/free-solid-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 library.add(
   faBook,
   faEnvelopeOpenText,
   faGlasses,
+  faGripLinesVertical,
+  faInstagram,
   faStore
 )
 
@@ -67,6 +72,10 @@ export default {
   @import "~bulma/bulma"
   .nav-icon
     margin-right: .5rem
+  .vertically-center
+    display: flex
+    align-items: center
+    color: $danger
   +until(550px)
     .nav-icon
       margin-right: 0rem
