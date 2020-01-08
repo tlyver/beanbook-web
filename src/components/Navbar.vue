@@ -47,7 +47,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faBook,
-  faEnvelopeOpenText,
   faGlasses,
   faGripLinesVertical,
   faStore
@@ -56,7 +55,6 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 library.add(
   faBook,
-  faEnvelopeOpenText,
   faGlasses,
   faGripLinesVertical,
   faInstagram,
