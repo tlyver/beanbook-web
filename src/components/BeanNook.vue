@@ -2,14 +2,21 @@
   <div class="nook">
     <div class="nook-title">
       <h4 class="title is-4 has-text-primary">
-        {{ format(new Date(nook.featured_date), 'MMMM') }}
-        {{ `'${format(new Date(nook.featured_date), 'yy')}` }}
+        {{ nook.name }}
       </h4>
+    </div>
+    <div class="nook-city is-inline-flex">
+      <div class="has-text-weight-bold has-text-primary">{{ nook.city }}, {{ nook.state }}</div>
+      <a
+        class="icon has-text-primary"
+        :href="`https://www.google.com/maps/place/${nook.street},+${nook.city},+${nook.state}+${nook.zip_code}/`">
+        <font-awesome-icon class="nav-icon" icon="directions" />
+      </a>
+
     </div>
     <div class="">
       <div class="nook-summary">
-        <span class="has-text-weight-bold has-text-primary">{{ nook.name}}</span>
-        {{ `- ${nook.commentary}` }}
+        {{ nook.commentary }}
       </div>
       <figure class="image">
         <img alt="Pick" :src="nook.images[0].url" v-if="nook.images[0]">
@@ -20,15 +27,17 @@
 </template>
 
 <script>
-import { format } from 'date-fns'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faDirections
+} from '@fortawesome/free-solid-svg-icons'
+
+library.add(
+  faDirections
+)
 
 export default {
-  props: ['nook'],
-  data () {
-    return {
-      format
-    }
-  }
+  props: ['nook']
 }
 </script>
 
@@ -45,7 +54,9 @@ export default {
     display: flex
     flex-direction: column
     align-items: flex-start
-    margin-bottom: .5rem
+    margin-bottom: .25rem
+  .nook-city
+    margin-bottom: .25rem
   .nook-summary
     padding-bottom: 1rem
 </style>
