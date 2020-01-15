@@ -16,7 +16,7 @@
     </div>
     <div class="">
       <div class="nook-summary">
-        {{ nook.commentary }}
+        {{ nook.commentary }} - <span class="has-text-primary has-text-weight-bold">libby</span>
       </div>
       <figure class="image">
         <img alt="Pick" :src="nook.images[0].url" v-if="nook.images[0]">
