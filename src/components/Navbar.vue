@@ -1,11 +1,11 @@
 <template>
   <nav class="navbar is-fixed-top is-desktop" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item">
+      <div class="nav-img">
         <router-link :to="{ name: 'about' }">
-          <img alt="Vue logo" src="../assets/bean-text.png">
+          <img alt="Vue logo" src="../assets/Bean_Book_Club_Finals/BeanBookClub_Logo_1118_FINAL_trans2.png">
         </router-link>
-      </a>
+      </div>
     </div>
 
     <div class="navbar-menu">
@@ -70,6 +70,9 @@ export default {
   @import "~bulma/bulma"
   .nav-icon
     margin-right: .5rem
+  .nav-img
+    width: 45px
+    height: auto
   .vertically-center
     display: flex
     align-items: center
