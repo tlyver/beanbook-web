@@ -8,6 +8,11 @@
         Past and present.
       </h5>
     </div>
+    <div class="page-description">
+      <p>
+        Stay up to date on what we are reading in the club! Every month, a different member selects the novel and facilitates our discussion during the meeting. Here you can find past and current picks! If you want to know more about our thoughts on the book and meeting notes, follow along on our goodreads page!
+      </p>
+    </div>
     <bean-pick v-for="result in results" :key="result.uuid" :result="result"/>
   </div>
 </template>

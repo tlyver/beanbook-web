@@ -8,6 +8,11 @@
         From all corners.
       </h5>
     </div>
+    <div class="page-description">
+      <p>
+        Independent Bookstores are at the heart of what it means to explore literature. Bean Book Club firmly believes in the success and expansion of Independent Bookstores EVERYWHERE! Trying to find that perfect place to pick up your next read in your neighborhood or out of town? Check out some of these bookstores we have found during our travels!
+      </p>
+    </div>
     <bean-nook v-for="nook in nooks" :key="nook.uuid" :nook="nook"/>
   </div>
 </template>
