@@ -9,7 +9,7 @@
       <div class="has-text-weight-bold has-text-primary">{{ nook.city }}, {{ nook.state }}</div>
       <a
         class="icon has-text-primary"
-        :href="`https://www.google.com/maps/place/${nook.street},+${nook.city},+${nook.state}+${nook.zip_code}/`">
+        :href="`${nook.map_url}`">
         <font-awesome-icon class="nav-icon" icon="directions" />
       </a>
 
