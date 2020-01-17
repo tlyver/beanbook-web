@@ -3,7 +3,7 @@
     <div class="navbar-brand">
       <div class="nav-img">
         <router-link :to="{ name: 'about' }">
-          <img alt="Vue logo" src="../assets/Bean_Book_Club_Finals/BeanBookClub_Logo_1118_FINAL_trans2.png">
+          <img alt="Vue logo" src="../assets/Bean_Book_Club_Finals/BeanBookClub_Logo_1118_FINAL_trans.png">
         </router-link>
       </div>
     </div>
