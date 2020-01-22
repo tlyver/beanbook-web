@@ -42,9 +42,32 @@
       </div>
       <div class="description">
         <div v-if="apiRes.volumeInfo">
-          <div class="book-description" v-html="apiRes.volumeInfo.description"></div>
-          <div v-if="descriptionExpanded">
-            <button class="button is-outlined is-primary" type="button" name="loadMore">More</button>
+          <div v-if="descriptionOverflow">
+            <div v-if="!descriptionExpanded">
+              <span class="book-description" v-html="this.description.slice(0,500)"></span><span>...</span>
+              <button
+                class="button expand-content is-outlined is-primary"
+                type="button"
+                name="loadMore"
+                @click="toggleDescription"
+              >
+                More
+              </button>
+            </div>
+            <div v-else>
+              <span class="book-description" v-html="this.description"></span>
+              <button
+                class="button expand-content is-outlined is-primary"
+                type="button"
+                name="loadMore"
+                @click="toggleDescription"
+              >
+                Less
+              </button>
+            </div>
+          </div>
+          <div v-else>
+            <span class="book-description" v-html="this.description"></span>
           </div>
         </div>
         <bean-cursor v-else/>
@@ -69,6 +92,7 @@ export default {
       apiRes: {},
       thumbnail: null,
       smallThumbnail: null,
+      descriptionOverflow: null,
       descriptionExpanded: null
     }
   },
@@ -76,12 +100,20 @@ export default {
     this.getGoogleApi()
   },
   methods: {
-    checkDescriptionLength (description) {
-      if (description.length > 10) {
-        this.descriptionExpanded = true
+    getDescription () {
+      this.description = this.apiRes.volumeInfo.description
+      this.checkDescriptionLength()
+    },
+    checkDescriptionLength () {
+      if (this.description.length > 500) {
+        this.descriptionOverflow = true
+        this.descriptionExpanded = false
       } else {
-        return false
+        this.descriptionOverflow = false
       }
+    },
+    toggleDescription () {
+      this.descriptionExpanded = !this.descriptionExpanded
     },
     setThumnails () {
       const { imageLinks } = this.apiRes.volumeInfo
@@ -93,7 +125,7 @@ export default {
         const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${this.result.isbn_10}`)
         this.apiRes = response.data.items[0]
         this.setThumnails()
-        this.checkDescriptionLength()
+        this.getDescription()
       } catch (error) {
         // handle error
       }
@@ -148,4 +180,9 @@ export default {
   .wrap
     display: flex
     flex-wrap: wrap
+  .expand-content
+    margin-top: .5rem
+    display: flex
+    margin-right: auto
+    margin-left: auto
 </style>
