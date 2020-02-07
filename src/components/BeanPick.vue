@@ -46,7 +46,7 @@
             <div v-if="!descriptionExpanded">
               <span class="book-description" v-html="this.description.slice(0,500)"></span><span>...</span>
               <button
-                class="button expand-content is-outlined is-primary"
+                class="button expand-content is-outlined is-primary is-small"
                 type="button"
                 name="loadMore"
                 @click="toggleDescription"
@@ -54,10 +54,10 @@
                 More
               </button>
             </div>
-            <div v-else>
+            <div v-else class="">
               <span class="book-description" v-html="this.description"></span>
               <button
-                class="button expand-content is-outlined is-primary"
+                class="button expand-content is-outlined is-primary is-small"
                 type="button"
                 name="loadMore"
                 @click="toggleDescription"

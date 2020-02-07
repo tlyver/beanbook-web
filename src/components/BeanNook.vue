@@ -12,11 +12,35 @@
         :href="`${nook.map_url}`">
         <font-awesome-icon class="nav-icon" icon="directions" />
       </a>
-
     </div>
     <div class="">
-      <div class="nook-summary">
-        {{ nook.commentary }} - <span class="has-text-primary has-text-weight-bold">libby</span>
+      <div v-if="commentaryOverflow" class="nook-summary">
+        <div v-if="!commentaryExpanded">
+          <div>
+            <span>{{ nook.commentary.slice(0,500) }}</span><span>...</span> - <span class="has-text-primary has-text-weight-bold">libby</span>
+          </div>
+          <button
+            class="button expand-content is-outlined is-primary is-small"
+            type="button"
+            name="loadMore"
+            @click="toggleDescription"
+          >
+            More
+          </button>
+        </div>
+        <div v-else class="">
+          <div>
+            {{ nook.commentary }} - <span class="has-text-primary has-text-weight-bold">libby</span>
+          </div>
+          <button
+            class="button expand-content is-outlined is-primary is-small"
+            type="button"
+            name="loadMore"
+            @click="toggleDescription"
+          >
+            Less
+          </button>
+        </div>
       </div>
       <figure class="image">
         <img alt="Pick" :src="nook.images[0].url" v-if="nook.images[0]">
@@ -37,7 +61,30 @@ library.add(
 )
 
 export default {
-  props: ['nook']
+  props: ['nook'],
+  mounted () {
+    this.checkCommentaryLength()
+  },
+  data () {
+    return {
+      commentaryOverflow: null,
+      commentaryExpanded: null
+    }
+  },
+  methods: {
+    checkCommentaryLength () {
+      console.log(this.nook.commentary.length)
+      if (this.nook.commentary.length > 500) {
+        this.commentaryOverflow = true
+        this.commentaryExpanded = false
+      } else {
+        this.commentaryOverflow = false
+      }
+    },
+    toggleDescription () {
+      this.commentaryExpanded = !this.commentaryExpanded
+    }
+  }
 }
 </script>
 
@@ -59,4 +106,9 @@ export default {
     margin-bottom: .25rem
   .nook-summary
     padding-bottom: 1rem
+  .expand-content
+    margin-top: .5rem
+    display: flex
+    margin-right: auto
+    margin-left: auto
 </style>
