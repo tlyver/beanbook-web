@@ -5,7 +5,7 @@
         Bean Book Club
       </h1>
       <h5 class="subtitle has-text-primary">
-        Boston gals who love to read.
+        A virtual book club.
       </h5>
     </div>
     <div class="page-description">
