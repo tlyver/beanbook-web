@@ -20,7 +20,7 @@
             <span>{{ nook.commentary.slice(0,500) }}</span><span>...</span> - <span class="has-text-primary has-text-weight-bold">libby</span>
           </div>
           <button
-            class="button expand-content is-outlined is-primary is-small"
+            class="button expand-content is-text"
             type="button"
             name="loadMore"
             @click="toggleDescription"
@@ -33,7 +33,7 @@
             {{ nook.commentary }} - <span class="has-text-primary has-text-weight-bold">libby</span>
           </div>
           <button
-            class="button expand-content is-outlined is-primary is-small"
+            class="button expand-content is-text"
             type="button"
             name="loadMore"
             @click="toggleDescription"

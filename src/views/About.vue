@@ -4,7 +4,7 @@
       <h1 class="title is-2 has-text-primary">
         Bean Book Club
       </h1>
-      <h5 class="subtitle has-text-primary">
+      <h5 class="subtitle has-text-warning">
         A virtual book club.
       </h5>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bookshelf">
-      <h4 class="title is-4 has-text-primary">
+      <h4 class="title is-4 has-text-danger" style="text-decoration: underline">
         {{ format(new Date(result.featured_date), 'MMMM') }}
         {{ `'${format(new Date(result.featured_date), 'yy')}` }}
       </h4>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="column">
                   <div class="tags">
-                    <div class="tag is-primary is-light has-text-weight-bold is-lowercase"
+                    <div class="tag is-warning is-light has-text-weight-bold is-lowercase"
                       v-for="category in result.categories"
                       :key="category.name">
                       {{ category.name }}
@@ -35,7 +35,9 @@
                   </div>
                 </div>
               </div>
-
+              <button class="button is-success is-outlined is-small" @click="buyBook">
+                Buy Now
+              </button>
             </div>
           </div>
         </div>
@@ -46,7 +48,7 @@
             <div v-if="!descriptionExpanded">
               <span class="book-description" v-html="this.description.slice(0,500)"></span><span>...</span>
               <button
-                class="button expand-content is-outlined is-primary is-small"
+                class="button expand-content is-text is-small"
                 type="button"
                 name="loadMore"
                 @click="toggleDescription"
@@ -57,7 +59,7 @@
             <div v-else class="">
               <span class="book-description" v-html="this.description"></span>
               <button
-                class="button expand-content is-outlined is-primary is-small"
+                class="button expand-content is-text is-small"
                 type="button"
                 name="loadMore"
                 @click="toggleDescription"
@@ -93,13 +95,16 @@ export default {
       thumbnail: null,
       smallThumbnail: null,
       descriptionOverflow: null,
-      descriptionExpanded: null
+      descriptionExpanded: null,
     }
   },
   created () {
     this.getGoogleApi()
   },
   methods: {
+    buyBook () {
+      window.open(this.result.affiliate_link, '_blank')
+    },
     getDescription () {
       this.description = this.apiRes.volumeInfo.description
       this.checkDescriptionLength()
