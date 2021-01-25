@@ -12,6 +12,9 @@
       <p>
         Stay up to date on what we are reading in the club! Every month, a different member selects the novel and facilitates our discussion during the meeting. Here you can find past and current picks!
       </p>
+      <p style="margin-top: 1rem; font-style: italic; font-size: .75rem">
+        I am an affiliate of Bookshop.org and I will earn a commission if you click through and make a purchase.
+      </p>
     </div>
     <bean-pick v-for="result in results" :key="result.uuid" :result="result"/>
   </div>
