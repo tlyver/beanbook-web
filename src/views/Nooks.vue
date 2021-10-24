@@ -36,7 +36,7 @@ export default {
   methods: {
     async getNooks () {
       try {
-        const res = await axios.get('api/club/nooks')
+        const res = await axios.get('api/club/nooks/')
         this.nooks = res.data.results
       } catch (error) {
         // handle error

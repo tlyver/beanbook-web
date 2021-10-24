@@ -39,7 +39,7 @@ export default {
   methods: {
     async getBooks () {
       try {
-        const res = await axios.get('api/club/books')
+        const res = await axios.get('api/club/books/')
         this.results = res.data.results
       } catch (error) {
         // handle error
